@@ -14,7 +14,15 @@
        </div>
         <form id="RegForm" action="" method="POST">
          {% csrf_token %}
-         {% for field in f%}
+         {% for field in serializer%}
+         {{ field }}
+         {% endfor %}
+          <div class="sign-btn">
+           <button> Sign Up </button>
+          </div>
+          <div>
+          <small> Alreay have an account? <a href="">Login </a></small>
+          </div>
         </form>
       </div>
      </div>

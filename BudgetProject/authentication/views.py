@@ -18,3 +18,6 @@ class RegisterView(GenericAPIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    def get(self, request):
+        serializer = UserSerializer()
+        return render(request, 'authentication/registration.html', {serializer:'serializer'})
