@@ -4,7 +4,7 @@
  <div class="container">
   <div class="row">
    <div class="col-2">
-    <img src ="{% static "image/Registration.JPG" %}" width="500px" alt="No image">
+    <img src = {% static 'image/Registration.JPG' %} width="400px" alt="No image">
    </div>
      <div class= "col-2">
       <div class= "form-container">
@@ -14,14 +14,16 @@
        </div>
         <form id="RegForm" action="" method="POST">
          {% csrf_token %}
-         {% for field in serializer%}
-         {{ field }}
+         {{ serializer.username.label_tag }} {{ serializer.username }}
+         {% for field in serializer %}
+         {{ field.label_tag }}
+         {{field}}
          {% endfor %}
           <div class="sign-btn">
            <button> Sign Up </button>
           </div>
           <div>
-          <small> Alreay have an account? <a href="">Login </a></small>
+          <small> Already have an account? <a href="">Login </a></small>
           </div>
         </form>
       </div>
