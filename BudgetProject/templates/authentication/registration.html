@@ -14,8 +14,9 @@
        </div>
         <form id="RegForm" action="" method="POST">
          {% csrf_token %}
-         {{ serializer.username.label_tag }} {{ serializer.username }}
-         {% for field in serializer %}
+          {{ serializer.username }}
+        {% for field_name, field in serializer.fields.items %}
+         {{ serializer.username }}
          {{ field.label_tag }}
          {{field}}
          {% endfor %}

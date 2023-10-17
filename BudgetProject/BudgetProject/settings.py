@@ -44,8 +44,7 @@ INSTALLED_APPS = [
     'expenses',
     'income',
     'report',
-    'restframework',
-    'rest_framework_serializer_field',
+
 ]
 
 MIDDLEWARE = [
