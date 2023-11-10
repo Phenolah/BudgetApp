@@ -12,6 +12,7 @@ from django.contrib import messages
 # Create your views here.
 @require_http_methods(["GET", "POST"])
 def RegistrationView(request):
+    context = {}
     template_name = 'authentication/registration.html'
 
     if request.method == 'POST':
@@ -27,4 +28,4 @@ def RegistrationView(request):
             context = {
                 'form': form
             }
-            return render(request, template_name , context)
+    return render(request, template_name , context)
