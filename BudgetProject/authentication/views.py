@@ -12,11 +12,11 @@ from django.contrib import messages
 # Create your views here.
 @require_http_methods(["GET", "POST"])
 def RegistrationView(request):
+    form = UserRegistrationForm(request.POST)
     context = {}
     template_name = 'authentication/registration.html'
 
     if request.method == 'POST':
-        form = UserRegistrationForm(request.POST)
         if form.is_valid():
             username = form.cleaned_data.get('username')
             user = form.save()
